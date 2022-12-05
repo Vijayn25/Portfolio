@@ -134,7 +134,7 @@
                     <section id="footer">
                         <div class="inner">
                             <h2 class="major">Get in touch</h2>
-                            <form method="post" action="#">
+                            <form method="post" action="#" name="Getin">
                                 <div class="fields">
                                     <div class="field">
                                         <label for="name">Name</label>
@@ -153,6 +153,18 @@
                                     <li><input type="submit" value="Send Message" /></li>
                                 </ul>
                             </form>
+				<script>
+								const scriptURL = 'https://script.google.com/macros/s/AKfycbxfa0B7sI6BnxSGZigWJbZaiMrtvYXCaks5qYgmXAnH395W6VI58Q4xLcg_TMi5uSAnBw/exec'
+								const form = document.forms['Getin']
+							  
+								form.addEventListener('submit', e => {
+								  e.preventDefault()
+								  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+									.then(response => alert("Thank you!" ))
+									.then(() => {  window.location.reload(); })
+									.catch(error => console.error('Error!', error.message))
+								})
+							  </script>
                             <ul class="contact">
                                 <li class="icon solid fa-home">
                                     3/50 Narayana Naicken Pudur<br />
